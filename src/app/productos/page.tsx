@@ -1,20 +1,22 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Header } from "@/components/Header";
+import { AlertCircle, Leaf, Sparkles } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 import { ProductCard } from "@/components/ProductCard";
 import { ProductFilter } from "@/components/ProductFilter";
 import { ProductModal } from "@/components/ProductModal";
-import { PLANTAS_INITIAL_DATA, PlantaProducto } from "@/lib/mockData";
+import { PLANTAS_INITIAL_DATA, type PlantaProducto } from "@/lib/mockData";
 import { supabase } from "@/lib/supabaseClient";
-import { Leaf, Sparkles, AlertCircle } from "lucide-react";
 
 export default function ProductosPage() {
-  const [productos, setProductos] = useState<PlantaProducto[]>(PLANTAS_INITIAL_DATA);
+  const [productos, setProductos] =
+    useState<PlantaProducto[]>(PLANTAS_INITIAL_DATA);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("todos");
-  const [selectedProductForModal, setSelectedProductForModal] = useState<PlantaProducto | null>(null);
+  const [selectedProductForModal, setSelectedProductForModal] =
+    useState<PlantaProducto | null>(null);
   const [loading, setLoading] = useState(false);
 
   // Intentar cargar productos desde Supabase si el cliente está disponible
@@ -25,7 +27,10 @@ export default function ProductosPage() {
         setLoading(true);
         const { data, error } = await supabase.from("productos").select("*");
         if (error) {
-          console.warn("Supabase query warn (usando fallback mockData):", error.message);
+          console.warn(
+            "Supabase query warn (usando fallback mockData):",
+            error.message,
+          );
         } else if (data && data.length > 0) {
           const mapped: PlantaProducto[] = data.map((item) => ({
             id: item.id,
@@ -58,7 +63,9 @@ export default function ProductosPage() {
       p.nombre.toLowerCase().includes(searchQuery.toLowerCase()) ||
       p.descripcionCorta.toLowerCase().includes(searchQuery.toLowerCase()) ||
       p.categoria.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      p.beneficios.some((b) => b.toLowerCase().includes(searchQuery.toLowerCase()));
+      p.beneficios.some((b) =>
+        b.toLowerCase().includes(searchQuery.toLowerCase()),
+      );
 
     const matchesCategory =
       selectedCategory === "todos" || p.categoriaSlug === selectedCategory;
@@ -71,14 +78,14 @@ export default function ProductosPage() {
       <Header />
 
       <main className="flex-1 py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full space-y-10">
-        
         {/* Banner Encabezado del Catálogo */}
         <div className="bg-gradient-to-r from-[#133327] via-[#1E4D3B] to-[#2D7A5D] rounded-3xl p-8 sm:p-12 text-white shadow-xl relative overflow-hidden">
           <div className="absolute top-0 right-0 translate-x-12 -translate-y-12 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />
-          
+
           <div className="relative z-10 max-w-3xl space-y-4">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-800/80 text-emerald-200 text-xs font-bold rounded-full border border-emerald-700">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" /> Catálogo Interactivo & Fichas Medicinales
+              <Sparkles className="w-3.5 h-3.5 text-amber-400" /> Catálogo
+              Interactivo & Fichas Medicinales
             </span>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight">
@@ -86,7 +93,10 @@ export default function ProductosPage() {
             </h1>
 
             <p className="text-stone-200 text-sm sm:text-base leading-relaxed">
-              Explora las especies medicinales altoandinas cuidadosamente seleccionadas, secadas y dosificadas por los estudiantes de la I.E.S. San Luis Gonzaga. Filtra por malestar o busca la infusión adecuada para tu bienestar.
+              Explora las especies medicinales altoandinas cuidadosamente
+              seleccionadas, secadas y dosificadas por los estudiantes de la
+              I.E.S. San Luis Gonzaga. Filtra por malestar o busca la infusión
+              adecuada para tu bienestar.
             </p>
           </div>
         </div>
@@ -104,16 +114,22 @@ export default function ProductosPage() {
         {loading ? (
           <div className="text-center py-20">
             <div className="w-12 h-12 border-4 border-emerald-700 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-            <p className="text-stone-600 font-medium text-sm">Cargando plantas medicinales...</p>
+            <p className="text-stone-600 font-medium text-sm">
+              Cargando plantas medicinales...
+            </p>
           </div>
         ) : filteredProducts.length === 0 ? (
           <div className="bg-white rounded-3xl p-12 text-center border border-stone-200/80 max-w-lg mx-auto my-12 space-y-4">
             <AlertCircle className="w-12 h-12 text-stone-400 mx-auto" />
-            <h3 className="text-lg font-bold text-stone-800">No encontramos coincidencias</h3>
+            <h3 className="text-lg font-bold text-stone-800">
+              No encontramos coincidencias
+            </h3>
             <p className="text-sm text-stone-600">
-              Intenta buscando con otro término o seleccionando la opción &quot;Todos&quot; en los filtros.
+              Intenta buscando con otro término o seleccionando la opción
+              &quot;Todos&quot; en los filtros.
             </p>
             <button
+              type="button"
               onClick={() => {
                 setSearchQuery("");
                 setSelectedCategory("todos");
@@ -141,13 +157,17 @@ export default function ProductosPage() {
             <Leaf className="w-6 h-6 text-amber-800" />
           </div>
           <div>
-            <h4 className="font-bold text-sm text-amber-900 mb-0.5">Empaque e Identidad Cultural</h4>
+            <h4 className="font-bold text-sm text-amber-900 mb-0.5">
+              Empaque e Identidad Cultural
+            </h4>
             <p>
-              Cada bolsita del kit está sellada con la hierba dosificada e incluye una ficha informativa con un código QR que permite escuchar testimonios en audio y explicaciones tradicionales grabadas por la comunidad.
+              Cada bolsita del kit está sellada con la hierba dosificada e
+              incluye una ficha informativa con un código QR que permite
+              escuchar testimonios en audio y explicaciones tradicionales
+              grabadas por la comunidad.
             </p>
           </div>
         </div>
-
       </main>
 
       {/* Modal con la Ficha de la Planta */}

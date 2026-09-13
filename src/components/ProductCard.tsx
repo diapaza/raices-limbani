@@ -1,17 +1,20 @@
 "use client";
 
-import React from "react";
+import { CheckCircle2, Eye, Leaf, Plus } from "lucide-react";
 import Image from "next/image";
-import { PlantaProducto } from "@/lib/mockData";
+import type React from "react";
 import { useCart } from "@/context/CartContext";
-import { Plus, Eye, CheckCircle2, Leaf } from "lucide-react";
+import type { PlantaProducto } from "@/lib/mockData";
 
 interface ProductCardProps {
   producto: PlantaProducto;
   onOpenDetail: (producto: PlantaProducto) => void;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ producto, onOpenDetail }) => {
+export const ProductCard: React.FC<ProductCardProps> = ({
+  producto,
+  onOpenDetail,
+}) => {
   const { addToCart } = useCart();
 
   return (
@@ -26,7 +29,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ producto, onOpenDetail
             className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent opacity-60" />
-          
+
           {/* Badge de Categoría */}
           <div className="absolute top-3 left-3 z-10">
             <span className="px-3 py-1 bg-[#FDFBF7]/90 backdrop-blur-md text-[#1E4D3B] font-bold text-xs rounded-full shadow-sm border border-emerald-100">
@@ -64,12 +67,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({ producto, onOpenDetail
 
           {/* Beneficios clave (chips) */}
           <div className="flex flex-wrap gap-1.5 pt-1">
-            {producto.beneficios.slice(0, 2).map((beneficio, i) => (
+            {producto.beneficios.slice(0, 2).map((beneficio) => (
               <span
-                key={i}
+                key={beneficio}
                 className="text-[11px] font-medium bg-emerald-50 text-emerald-800 px-2 py-0.5 rounded-md border border-emerald-100 flex items-center gap-1"
               >
-                <CheckCircle2 className="w-3 h-3 text-emerald-600" /> {beneficio}
+                <CheckCircle2 className="w-3 h-3 text-emerald-600" />{" "}
+                {beneficio}
               </span>
             ))}
           </div>
@@ -80,7 +84,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ producto, onOpenDetail
       <div className="p-5 pt-0 space-y-3">
         <div className="flex items-center justify-between border-t border-stone-100 pt-3">
           <div>
-            <span className="text-[10px] text-stone-400 font-semibold uppercase tracking-wider block">Empaque tradicional</span>
+            <span className="text-[10px] text-stone-400 font-semibold uppercase tracking-wider block">
+              Empaque tradicional
+            </span>
             <span className="text-lg font-extrabold text-[#1E4D3B]">
               S/ {producto.precio.toFixed(2)}
             </span>
@@ -88,6 +94,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ producto, onOpenDetail
 
           <div className="flex items-center gap-2">
             <button
+              type="button"
               onClick={() => onOpenDetail(producto)}
               className="p-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 transition-colors"
               title="Ver Ficha Completa"
@@ -96,6 +103,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ producto, onOpenDetail
             </button>
 
             <button
+              type="button"
               onClick={() => addToCart(producto)}
               className="px-3.5 py-2.5 rounded-xl bg-[#1E4D3B] hover:bg-[#2D7A5D] text-white font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all transform active:scale-95"
             >

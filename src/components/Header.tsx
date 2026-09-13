@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
+import { Leaf, Menu, ShoppingBag, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import type React from "react";
+import { useState } from "react";
 import { useCart } from "@/context/CartContext";
-import { ShoppingBag, Leaf, Menu, X } from "lucide-react";
 
 export const Header: React.FC = () => {
   const { totalItems, setIsCartOpen } = useCart();
@@ -13,9 +14,12 @@ export const Header: React.FC = () => {
   return (
     <header className="sticky top-0 z-40 bg-[#FDFBF7]/90 backdrop-blur-md border-b border-emerald-900/10 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        
         {/* Logo de la marca usando logo-xl.svg */}
-        <Link href="/" className="flex items-center transition-transform hover:scale-[1.02]" aria-label="Raíces de Limbani - Inicio">
+        <Link
+          href="/"
+          className="flex items-center transition-transform hover:scale-[1.02]"
+          aria-label="Raíces de Limbani - Inicio"
+        >
           <Image
             src="/logo-xl.svg"
             alt="Logo Raíces de Limbani"
@@ -57,6 +61,7 @@ export const Header: React.FC = () => {
         {/* Acciones (Boton Carrito + Menú Móvil) */}
         <div className="flex items-center gap-4">
           <button
+            type="button"
             onClick={() => setIsCartOpen(true)}
             className="relative p-2.5 rounded-xl bg-[#1E4D3B] text-white hover:bg-[#2D7A5D] shadow-md transition-all flex items-center gap-2 group"
             aria-label="Abrir Carrito"
@@ -71,14 +76,18 @@ export const Header: React.FC = () => {
           </button>
 
           <button
+            type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 rounded-xl text-stone-700 hover:bg-stone-100"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
-
       </div>
 
       {/* Menú Móvil desplegable */}

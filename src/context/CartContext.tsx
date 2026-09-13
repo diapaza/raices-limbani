@@ -1,7 +1,8 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect } from "react";
-import { PlantaProducto } from "@/lib/mockData";
+import type React from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import type { PlantaProducto } from "@/lib/mockData";
 
 export interface CartItem {
   producto: PlantaProducto;
@@ -50,7 +51,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const addToCart = (producto: PlantaProducto, cantidad = 1) => {
     setCart((prevCart) => {
       const existingIndex = prevCart.findIndex(
-        (item) => item.producto.id === producto.id
+        (item) => item.producto.id === producto.id,
       );
 
       if (existingIndex > -1) {
@@ -65,7 +66,9 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const removeFromCart = (productoId: string) => {
-    setCart((prevCart) => prevCart.filter((item) => item.producto.id !== productoId));
+    setCart((prevCart) =>
+      prevCart.filter((item) => item.producto.id !== productoId),
+    );
   };
 
   const updateQuantity = (productoId: string, cantidad: number) => {
@@ -75,8 +78,8 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     }
     setCart((prevCart) =>
       prevCart.map((item) =>
-        item.producto.id === productoId ? { ...item, cantidad } : item
-      )
+        item.producto.id === productoId ? { ...item, cantidad } : item,
+      ),
     );
   };
 
@@ -87,7 +90,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const totalItems = cart.reduce((sum, item) => sum + item.cantidad, 0);
   const totalPrecio = cart.reduce(
     (sum, item) => sum + item.producto.precio * item.cantidad,
-    0
+    0,
   );
 
   return (
