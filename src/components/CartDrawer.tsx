@@ -28,8 +28,14 @@ export const CartDrawer: React.FC = () => {
       .join("%0A");
 
     const message = `¡Hola Equipo Guardianes de la Salud Andina! 🌿%0AQuisiera realizar una consulta/pedido de los siguientes productos de Raíces de Limbani:%0A%0A${itemsList}%0A%0A*Total estimado: S/ ${totalPrecio.toFixed(2)}*%0A%0A¿Me podrían brindar información sobre la entrega? Gracias.`;
-    
-    window.open(`https://wa.me/?text=${message}`, "_blank");
+
+    const numeroDestino = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "");
+
+    const whatsappUrl = numeroDestino
+      ? `https://wa.me/${numeroDestino}?text=${message}`
+      : `https://wa.me/?text=${message}`;
+
+    window.open(whatsappUrl, "_blank");
   };
 
   return (
