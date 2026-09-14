@@ -43,6 +43,7 @@ export default function Home() {
               src="/images/hero.jpg"
               alt="Paisaje y naturaleza medicinal de Limbani"
               fill
+              sizes="100vw"
               className="object-cover object-center"
               priority
               quality={90}

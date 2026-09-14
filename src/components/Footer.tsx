@@ -13,9 +13,9 @@ export const Footer: React.FC = () => {
             <Image
               src="/logo-brand.svg"
               alt="Logo Raíces de Limbani"
-              width={150}
-              height={150}
-              className="brightness-125"
+              width={180}
+              height={205}
+              className="brightness-125 h-32 w-auto"
             />
           </div>
 

@@ -54,6 +54,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
               src={producto.imagenUrl}
               alt={producto.nombre}
               fill
+              sizes="(max-width: 640px) 100vw, 336px"
               className="object-cover opacity-90"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-transparent" />
