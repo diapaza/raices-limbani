@@ -277,13 +277,16 @@ export default function Home() {
 
               <div className="lg:col-span-4 flex justify-center">
                 <div className="bg-white text-stone-900 p-6 rounded-3xl shadow-sm text-center space-y-3 max-w-xs border border-stone-200">
-                  <div className="w-20 h-20 mx-auto bg-emerald-50 rounded-2xl flex items-center justify-center p-3 border border-emerald-200">
-                    <QrCode className="w-full h-full text-[#1E4D3B]" />
-                  </div>
-                  <h4 className="font-bold text-sm">Escanea la Ficha</h4>
+                  <Image
+                    src="/images/qr.png"
+                    alt="Escanea Aquí"
+                    width={200}
+                    height={200}
+                    className="mx-auto"
+                  />
+                  <h4 className="font-bold text-sm">Escanea Aquí</h4>
                   <p className="text-[11px] text-stone-600">
-                    Accede a la voz de nuestros abuelos y la explicación de
-                    dosis y preparación en audio.
+                    Accede a la explicación de dosis y preparación en video.
                   </p>
                 </div>
               </div>
