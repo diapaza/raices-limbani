@@ -34,7 +34,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-[#FDFBF7] selection:bg-emerald-200 selection:text-emerald-950">
       <Header />
 
-      <main className="flex-1 pb-20">
+      <main className="flex-1">
         {/* HERO SECTION */}
         <section className="relative overflow-hidden min-h-[75vh] flex items-center bg-stone-950 py-16 sm:py-24 lg:py-32">
           {/* Imagen utilizada como background del Hero */}
@@ -295,21 +295,24 @@ export default function Home() {
         </section>
 
         {/* AVISO DE RESPONSABILIDAD MÉDICA */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-          <div className="bg-amber-50/80 rounded-2xl p-6 border border-amber-200/80 flex items-start gap-4 text-xs text-amber-950">
-            <ShieldCheck className="w-6 h-6 text-amber-700 flex-shrink-0 mt-0.5" />
-            <div className="space-y-1">
-              <h4 className="font-bold text-amber-900">
-                Nota de Responsabilidad Social y Salud
-              </h4>
-              <p className="leading-relaxed">
-                Este proyecto documenta y difunde el conocimiento tradicional
-                tal como lo transmiten las familias y comuneros de Limbani con
-                fines educativos y de rescate cultural. Estos usos corresponden
-                a la medicina tradicional andina y no reemplazan el diagnóstico
-                ni el tratamiento de un profesional de la salud. Ante síntomas
-                graves, siempre se debe acudir a un establecimiento médico.
-              </p>
+        <section className="pb-16 bg-[#F3EFE6] border-y border-stone-200/80">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-amber-50/80 rounded-2xl p-6 border border-amber-200/80 flex items-start gap-4 text-xs text-amber-950">
+              <ShieldCheck className="w-6 h-6 text-amber-700 flex-shrink-0 mt-0.5" />
+              <div className="space-y-1">
+                <h4 className="font-bold text-amber-900">
+                  Nota de Responsabilidad Social y Salud
+                </h4>
+                <p className="leading-relaxed">
+                  Este proyecto documenta y difunde el conocimiento tradicional
+                  tal como lo transmiten las familias y comuneros de Limbani con
+                  fines educativos y de rescate cultural. Estos usos
+                  corresponden a la medicina tradicional andina y no reemplazan
+                  el diagnóstico ni el tratamiento de un profesional de la
+                  salud. Ante síntomas graves, siempre se debe acudir a un
+                  establecimiento médico.
+                </p>
+              </div>
             </div>
           </div>
         </section>
