@@ -10,6 +10,7 @@ import {
   X,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import type React from "react";
 import { useCart } from "@/context/CartContext";
 
@@ -101,13 +102,13 @@ export const CartDrawer: React.FC = () => {
                   Explora nuestros kits y productos ancestrales para añadir tus
                   infusiones medicinales.
                 </p>
-                <button
-                  type="button"
+                <Link
+                  href="/productos"
                   onClick={() => setIsCartOpen(false)}
-                  className="px-6 py-2.5 bg-[#1E4D3B] text-white font-semibold text-sm rounded-xl shadow-md hover:bg-[#2D7A5D] transition-colors"
+                  className="inline-block px-6 py-2.5 bg-[#1E4D3B] text-white font-semibold text-sm rounded-xl shadow-md hover:bg-[#2D7A5D] transition-colors"
                 >
                   Explorar Catálogo
-                </button>
+                </Link>
               </div>
             ) : (
               cart.map((item) => (
