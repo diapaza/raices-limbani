@@ -58,6 +58,10 @@ export default function RootLayout({
           // biome-ignore lint/security/noDangerouslySetInnerHtml: static JSON-LD schema.org markup, no user input
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <meta
+          name="google-site-verification"
+          content="02HQfywJE1m0eNRpHnbaHmKCPIbbNMp-tzNxUDb8Ir8"
+        />
       </head>
       <body className="min-h-full flex flex-col font-sans">
         <CartProvider>
