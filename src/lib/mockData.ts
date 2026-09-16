@@ -88,7 +88,7 @@ export const PLANTAS_INITIAL_DATA: PlantaProducto[] = [
     usosTradicionales:
       "Se aplica como infusión concentrada en lavados o preparada como parche empapado en papel o gasa colocado directamente en la zona afectada.",
     preparacion:
-      "Para infusión de lavado: hervir 3 minutos y dejar enfriar. Para parche: envolver la hierba tibia tibia sobre la herida limpia.",
+      "Para infusión de lavado: hervir 3 minutos y dejar enfriar. Para parche: envolver la hierba tibia sobre la herida limpia.",
     precio: 5.0,
     presentacion: "50g",
     imagenUrl: "/images/bolsa-ejemplo.jpeg",
