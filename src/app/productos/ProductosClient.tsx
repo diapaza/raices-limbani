@@ -42,7 +42,8 @@ export default function ProductosClient() {
             usosTradicionales: item.usos_tradicionales,
             preparacion: item.preparacion,
             precio: item.precio,
-            presentacion: item.presentacion || (item.precio === 12 ? "200g" : "50g"),
+            presentacion:
+              item.presentacion || (item.precio === 12 ? "200g" : "50g"),
             imagenUrl: item.imagen_url || "/images/bolsa-ejemplo.jpeg",
             destacado: item.destacado,
             beneficios: item.beneficios || ["Uso Tradicional Limbani"],
