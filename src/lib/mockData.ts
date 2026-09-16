@@ -27,7 +27,7 @@ export const PLANTAS_INITIAL_DATA: PlantaProducto[] = [
       "Según los sabios y yatiris de Limbani, es una hierba sagrada para el cuidado femenino y la regulación del bienestar digestivo y reproductor.",
     preparacion:
       "Dejar reposar 1 cucharadita de hierba seca en 1 taza de agua hirviendo por 5 a 8 minutos. Colar y tomar tibia antes del desayuno y antes de dormir de manera constante.",
-    precio: 12.0,
+    precio: 5.0,
     presentacion: "50g",
     imagenUrl: "/images/bolsa-ejemplo.jpeg",
     destacado: true,
@@ -49,7 +49,7 @@ export const PLANTAS_INITIAL_DATA: PlantaProducto[] = [
       "Tradicionalmente recolectada en zonas de ladera andina por los pobladores para aliviar inflamaciones y cuidar las vías urinarias.",
     preparacion:
       "Hervir agua y verter sobre 2 flores/hojas secas. Reposar por 10 minutos tapado. Beber 2 veces al día (en ayunas y al acostarse).",
-    precio: 15.0,
+    precio: 5.0,
     presentacion: "50g",
     imagenUrl: "/images/bolsa-ejemplo.jpeg",
     destacado: true,
@@ -71,7 +71,7 @@ export const PLANTAS_INITIAL_DATA: PlantaProducto[] = [
       "Ampliamente transmitida por las abuelas de la comunidad para acompañar la recuperación y mantener la energía corporal.",
     preparacion:
       "Infusión ligera: 1 bolsita o pizca de hierba en agua bien caliente por 5 minutos. Consumir por las mañanas y noches.",
-    precio: 10.0,
+    precio: 5.0,
     presentacion: "50g",
     imagenUrl: "/images/bolsa-ejemplo.jpeg",
     destacado: false,
@@ -89,7 +89,7 @@ export const PLANTAS_INITIAL_DATA: PlantaProducto[] = [
       "Se aplica como infusión concentrada en lavados o preparada como parche empapado en papel o gasa colocado directamente en la zona afectada.",
     preparacion:
       "Para infusión de lavado: hervir 3 minutos y dejar enfriar. Para parche: envolver la hierba tibia tibia sobre la herida limpia.",
-    precio: 14.0,
+    precio: 5.0,
     presentacion: "50g",
     imagenUrl: "/images/bolsa-ejemplo.jpeg",
     destacado: true,
@@ -111,7 +111,7 @@ export const PLANTAS_INITIAL_DATA: PlantaProducto[] = [
       "Utilizada en baños espirituales/rituales y baños de vapor para devolver la vitalidad cuando una persona siente cansancio profundo.",
     preparacion:
       "Hervir un puñado en 2 litros de agua durante 10 minutos. Utilizar en baños tibios o tomar infusiones muy suaves según recomendación comunitaria.",
-    precio: 12.5,
+    precio: 5.0,
     presentacion: "50g",
     imagenUrl: "/images/bolsa-ejemplo.jpeg",
     destacado: false,
@@ -133,7 +133,7 @@ export const PLANTAS_INITIAL_DATA: PlantaProducto[] = [
       "Famosa en toda la región andina por su acción depurativa sobre el hígado y los riñones.",
     preparacion:
       "Hervir 1 cucharada por litro de agua durante 5 minutos. Dejar reposar y tomar como agua del tiempo o en 3 tomas diarias.",
-    precio: 13.0,
+    precio: 5.0,
     presentacion: "50g",
     imagenUrl: "/images/bolsa-ejemplo.jpeg",
     destacado: true,
@@ -155,7 +155,7 @@ export const PLANTAS_INITIAL_DATA: PlantaProducto[] = [
       "Las hojas de matico son preparadas en infusión caliente para combatir el resfrío del clima frío altoandino.",
     preparacion:
       "Reposar 2 a 3 hojas secas en 1 taza de agua hirviendo por 5 minutos. Tomar bien caliente con una gota de miel.",
-    precio: 11.0,
+    precio: 5.0,
     presentacion: "50g",
     imagenUrl: "/images/bolsa-ejemplo.jpeg",
     destacado: true,
