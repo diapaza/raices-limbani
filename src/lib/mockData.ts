@@ -8,6 +8,7 @@ export interface PlantaProducto {
   usosTradicionales: string;
   preparacion: string;
   precio: number;
+  presentacion?: string;
   imagenUrl: string;
   destacado?: boolean;
   beneficios: string[];
@@ -27,6 +28,7 @@ export const PLANTAS_INITIAL_DATA: PlantaProducto[] = [
     preparacion:
       "Dejar reposar 1 cucharadita de hierba seca en 1 taza de agua hirviendo por 5 a 8 minutos. Colar y tomar tibia antes del desayuno y antes de dormir de manera constante.",
     precio: 12.0,
+    presentacion: "50g",
     imagenUrl: "/images/bolsa-ejemplo.jpeg",
     destacado: true,
     beneficios: [
@@ -48,6 +50,7 @@ export const PLANTAS_INITIAL_DATA: PlantaProducto[] = [
     preparacion:
       "Hervir agua y verter sobre 2 flores/hojas secas. Reposar por 10 minutos tapado. Beber 2 veces al día (en ayunas y al acostarse).",
     precio: 15.0,
+    presentacion: "50g",
     imagenUrl: "/images/bolsa-ejemplo.jpeg",
     destacado: true,
     beneficios: [
@@ -69,6 +72,7 @@ export const PLANTAS_INITIAL_DATA: PlantaProducto[] = [
     preparacion:
       "Infusión ligera: 1 bolsita o pizca de hierba en agua bien caliente por 5 minutos. Consumir por las mañanas y noches.",
     precio: 10.0,
+    presentacion: "50g",
     imagenUrl: "/images/bolsa-ejemplo.jpeg",
     destacado: false,
     beneficios: ["Equilibrio matriz", "Digestión suave", "Restaurador natural"],
@@ -86,6 +90,7 @@ export const PLANTAS_INITIAL_DATA: PlantaProducto[] = [
     preparacion:
       "Para infusión de lavado: hervir 3 minutos y dejar enfriar. Para parche: envolver la hierba tibia tibia sobre la herida limpia.",
     precio: 14.0,
+    presentacion: "50g",
     imagenUrl: "/images/bolsa-ejemplo.jpeg",
     destacado: true,
     beneficios: [
@@ -107,6 +112,7 @@ export const PLANTAS_INITIAL_DATA: PlantaProducto[] = [
     preparacion:
       "Hervir un puñado en 2 litros de agua durante 10 minutos. Utilizar en baños tibios o tomar infusiones muy suaves según recomendación comunitaria.",
     precio: 12.5,
+    presentacion: "50g",
     imagenUrl: "/images/bolsa-ejemplo.jpeg",
     destacado: false,
     beneficios: [
@@ -128,6 +134,7 @@ export const PLANTAS_INITIAL_DATA: PlantaProducto[] = [
     preparacion:
       "Hervir 1 cucharada por litro de agua durante 5 minutos. Dejar reposar y tomar como agua del tiempo o en 3 tomas diarias.",
     precio: 13.0,
+    presentacion: "50g",
     imagenUrl: "/images/bolsa-ejemplo.jpeg",
     destacado: true,
     beneficios: [
@@ -149,6 +156,7 @@ export const PLANTAS_INITIAL_DATA: PlantaProducto[] = [
     preparacion:
       "Reposar 2 a 3 hojas secas en 1 taza de agua hirviendo por 5 minutos. Tomar bien caliente con una gota de miel.",
     precio: 11.0,
+    presentacion: "50g",
     imagenUrl: "/images/bolsa-ejemplo.jpeg",
     destacado: true,
     beneficios: [

@@ -75,9 +75,16 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                 <h2 className="text-2xl font-extrabold text-[#1E4D3B]">
                   {producto.nombre}
                 </h2>
-                <p className="text-xl font-bold text-amber-700 mt-1">
-                  S/ {producto.precio.toFixed(2)}
-                </p>
+                <div className="flex items-center gap-2 mt-1">
+                  <span className="text-xl font-bold text-amber-700">
+                    S/ {producto.precio.toFixed(2)}
+                  </span>
+                  {producto.presentacion && (
+                    <span className="text-xs font-bold bg-amber-100 text-amber-900 px-2.5 py-0.5 rounded-full border border-amber-200">
+                      Presentación {producto.presentacion}
+                    </span>
+                  )}
+                </div>
               </div>
 
               <p className="text-sm text-stone-700 leading-relaxed">

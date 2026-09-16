@@ -86,7 +86,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <div className="flex items-center justify-between border-t border-stone-100 pt-3">
           <div>
             <span className="text-[10px] text-stone-400 font-semibold uppercase tracking-wider block">
-              Empaque tradicional
+              {producto.presentacion ? `Empaque ${producto.presentacion}` : "Empaque tradicional"}
             </span>
             <span className="text-lg font-extrabold text-[#1E4D3B]">
               S/ {producto.precio.toFixed(2)}
