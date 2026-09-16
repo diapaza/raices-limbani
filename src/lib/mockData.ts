@@ -165,10 +165,55 @@ export const PLANTAS_INITIAL_DATA: PlantaProducto[] = [
       "Desinflamante",
     ],
   },
+  {
+    id: "mix-7-plantas",
+    nombre: "Mix Completo 7 Plantas",
+    nombreCientifico: "Combinado Ancestral de Limbani",
+    categoria: "Mezclas & Mixes",
+    categoriaSlug: "mezclas",
+    descripcionCorta:
+      "Mezcla medicinal completa de 200g que reúne las 7 plantas tradicionales de Limbani: Wisullo, Achancara, Pepelora, Wichullo, Tobi, Chancapiedra y Matico.",
+    usosTradicionales:
+      "Fórmula integral tradicional que combina la sabiduría de todas las variedades para un cuidado holístico de la salud humana.",
+    preparacion:
+      "Hervir 1 a 2 cucharadas de la mezcla en 1 litro de agua durante 5 a 8 minutos. Dejar reposar, colar y tomar caliente o como agua del tiempo.",
+    precio: 12.0,
+    presentacion: "200g",
+    imagenUrl: "/images/bolsa-ejemplo.jpeg",
+    destacado: true,
+    beneficios: [
+      "Contiene las 7 plantas",
+      "Salud integral & holística",
+      "Presentación 200g",
+    ],
+  },
+  {
+    id: "mix-5-plantas",
+    nombre: "Mix 5 Plantas Tradicionales",
+    nombreCientifico: "Selección Especial Limbani",
+    categoria: "Mezclas & Mixes",
+    categoriaSlug: "mezclas",
+    descripcionCorta:
+      "Mezcla especial de 200g que combina Pepelora, Wisullo, Achancara, Chancapiedra y Matico para la salud femenina, masculina, renal y respiratoria.",
+    usosTradicionales:
+      "Mezcla equilibrada seleccionada para potenciar el alivio renal, matriz, vías urinarias y digestión en un solo empaque.",
+    preparacion:
+      "Dejar reposar 1 cucharada del mix en 1 taza de agua hirviendo durante 7 minutos. Tomar de 2 a 3 veces al día según necesidad.",
+    precio: 12.0,
+    presentacion: "200g",
+    imagenUrl: "/images/bolsa-ejemplo.jpeg",
+    destacado: true,
+    beneficios: [
+      "Pepelora, Wisullo, Achancara, Chancapiedra, Matico",
+      "Cuidado renal & matriz",
+      "Presentación 200g",
+    ],
+  },
 ];
 
 export const CATEGORIAS = [
   { nombre: "Todos", slug: "todos" },
+  { nombre: "Mezclas & Mixes", slug: "mezclas" },
   { nombre: "Salud Femenina", slug: "salud-femenina" },
   { nombre: "Salud Masculina", slug: "salud-masculina" },
   { nombre: "Renal & Biliar", slug: "renal-biliar" },
